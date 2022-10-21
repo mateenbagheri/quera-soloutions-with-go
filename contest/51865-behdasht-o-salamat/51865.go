@@ -4,26 +4,29 @@ import (
 	"fmt"
 )
 
+var completeGrade int = 20
+
 func main() {
 	var x, n int
 
-	fmt.Scanln(&x)
-	fmt.Scanln(&n)
+	fmt.Scanf("%d\n", &x)
+	fmt.Scanf("%d", &n)
 
 	result := calculateGrade(x, n)
 	print(result)
 }
 
-func calculateGrade(x int, n int) int {
-	if n == 0 {
-		return 20
-	} else if n == 7 {
-		return x
-	} else {
-		if n >= x {
-			return 0
-		} else {
-			return x - n
+func calculateGrade(currentGrade int, travelDays int) int {
+	var finalGrade int = currentGrade
+
+	if travelDays == 0 {
+		finalGrade = completeGrade
+	} else if travelDays != 7 {
+		finalGrade = currentGrade - travelDays
+		if finalGrade < 0 {
+			finalGrade = 0
 		}
 	}
+
+	return finalGrade
 }
