@@ -10,7 +10,7 @@ func main() {
 	var x, n int
 
 	fmt.Scanf("%d\n", &x)
-	fmt.Scanf("%d", &n)
+	fmt.Scanf("%d\n", &n)
 
 	result := calculateGrade(x, n)
 	print(result)
