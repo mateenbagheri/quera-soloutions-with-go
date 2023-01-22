@@ -14,6 +14,7 @@ Project Dir:.
 └───contest
     ├───<Problem ID>-<Problem Name>
     │       <Problem ID>.go
+    │       <Problem ID>_test.go
     │       problem.pdf
     ...
 ```
@@ -32,4 +33,8 @@ have Go installed. Clone the project and write the following commad.
 ```
 go run contest/<problem dir>/<problemID>.go
 ```
+## Update
+From now on, there will be an other file in each directory contianing some test regarding the problemset. This test file wont be uploaded to Quera and is not required but it will be a good practice of TDD
+        
 Only educational usage of this repository is consented.
+
