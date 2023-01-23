@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"bytes"
 	"fmt"
 	"os"
 	"strings"
@@ -43,14 +44,14 @@ func main() {
 	if len(result) == 0 {
 		fmt.Println("NOT FOUND!")
 	} else {
-		printSlice(result)
+		fmt.Println(strIntSlice(result))
 	}
 }
 
-func printSlice(s []int) {
-	if len(s) == 0 {
-		return
+func strIntSlice(ints []int) string {
+	var b bytes.Buffer
+	for _, num := range ints {
+		fmt.Fprintf(&b, "%d ", num)
 	}
-	fmt.Println(s[0])
-	printSlice(s[1:])
+	return b.String()
 }
