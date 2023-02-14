@@ -32,7 +32,7 @@ func monthToDay(monthCount int) int {
 		if monthCount <= 7 {
 			result = (monthCount - 1) * 31
 		} else if monthCount <= 11 {
-			result = (6 * 31) + ((monthCount - 6) * 30)
+			result = (6 * 31) + ((monthCount - 7) * 30)
 		} else {
 			result = (6 * 31) + (5 * 30)
 		}

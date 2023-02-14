@@ -18,9 +18,15 @@ func TestDateDiff(t *testing.T) {
 		assertDateDiffResult(t, wanted, got)
 	})
 
-	t.Run("second sample", func(t *testing.T) {
+	t.Run("third sample", func(t *testing.T) {
 		wanted := 0
 		got := dateDiff(date{30, 2}, date{30, 2})
+		assertDateDiffResult(t, wanted, got)
+	})
+
+	t.Run("forth sample", func(t *testing.T) {
+		wanted := 303
+		got := dateDiff(date{31, 2}, date{29, 12})
 		assertDateDiffResult(t, wanted, got)
 	})
 }
