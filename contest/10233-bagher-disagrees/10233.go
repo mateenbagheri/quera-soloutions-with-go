@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 )
 
-const maxInt = 9223372036854775807
+const maxInt = math.MaxInt64
 
 func hasBiggerSmall(numberString string) (*string, error) {
 	initialValue, err := strconv.Atoi(numberString)
