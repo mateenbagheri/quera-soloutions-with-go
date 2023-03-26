@@ -28,10 +28,7 @@ func TestEncrypt(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			got, err := encrypt(tc.inputN, tc.inputK, tc.inputString)
-			if err != nil {
-				t.Errorf("got the following error: %q", err.Error())
-			}
+			got := encrypt(tc.inputN, tc.inputK, tc.inputString)
 			if got != tc.expected {
 				t.Errorf("got %q but expected %q", got, tc.expected)
 			}

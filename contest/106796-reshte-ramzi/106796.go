@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func encrypt(n, k int, inpStr string) (string, error) {
+func encrypt(n, k int, inpStr string) string {
 	r := []rune(inpStr)
 	r = append([]rune{r[n-1]}, r[:n-1]...)
 	for i := 0; i < k; i++ {
@@ -18,7 +18,7 @@ func encrypt(n, k int, inpStr string) (string, error) {
 		}
 	}
 
-	return string(r), nil
+	return string(r)
 }
 
 func main() {
@@ -27,6 +27,6 @@ func main() {
 	fmt.Scanf("%d", &n)
 	fmt.Scanf("%d", &k)
 	fmt.Scanf("%s", &input)
-	res, _ := encrypt(n, k, input)
+	res := encrypt(n, k, input)
 	fmt.Println(res)
 }
