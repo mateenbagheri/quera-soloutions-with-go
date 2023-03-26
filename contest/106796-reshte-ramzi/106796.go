@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func encrypt(n, k int, inpStr string) (string, error) {
 	r := []rune(inpStr)
@@ -10,7 +12,6 @@ func encrypt(n, k int, inpStr string) (string, error) {
 		for j := range r {
 			if string(r[j]) != "z" {
 				r[j] = r[j] + 1
-				println()
 			} else {
 				r[j] = 'a'
 			}
@@ -23,10 +24,9 @@ func encrypt(n, k int, inpStr string) (string, error) {
 func main() {
 	var n, k int
 	var input string
-	fmt.Scanf("%d\n", &n)
-	fmt.Scanf("%d\n", &k)
-	fmt.Scanf("%s\n", &input)
-
+	fmt.Scanf("%d", &n)
+	fmt.Scanf("%d", &k)
+	fmt.Scanf("%s", &input)
 	res, _ := encrypt(n, k, input)
 	fmt.Println(res)
 }
